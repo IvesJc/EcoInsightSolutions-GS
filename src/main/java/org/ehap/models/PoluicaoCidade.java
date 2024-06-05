@@ -1,5 +1,8 @@
 package org.ehap.models;
 
+import jakarta.json.bind.annotation.JsonbPropertyOrder;
+
+@JsonbPropertyOrder({"cidade", "regiao", "ano", "qualidadeAr", "poluicaoAgua", "entidadeId"})
 public class PoluicaoCidade {
 
     private String cidade;

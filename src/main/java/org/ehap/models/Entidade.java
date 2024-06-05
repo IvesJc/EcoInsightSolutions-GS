@@ -1,5 +1,9 @@
 package org.ehap.models;
 
+import jakarta.json.bind.annotation.JsonbPropertyOrder;
+
+@JsonbPropertyOrder({"id", "nome", "codigo", "grupo"})
+
 public class Entidade {
 
     private Integer id;

@@ -1,5 +1,8 @@
 package org.ehap.models;
 
+import jakarta.json.bind.annotation.JsonbPropertyOrder;
+
+@JsonbPropertyOrder({"nomeUsuario", "nome", "senha"})
 public class Usuario {
 
     private String nomeUsuario;
