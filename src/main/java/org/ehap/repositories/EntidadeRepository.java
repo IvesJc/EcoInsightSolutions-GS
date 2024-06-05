@@ -95,7 +95,7 @@ public class EntidadeRepository {
         }
     }
 
-    public void deleteByUsername(int id) {
+    public void deleteById(int id) {
         try (
                 Connection connection = dbConfig.getConnection();
                 PreparedStatement st = connection.prepareStatement(
@@ -117,8 +117,9 @@ public class EntidadeRepository {
 
 
     private void mapResultSetToEntidade(ResultSet rs, Entidade entidade) throws SQLException {
+        entidade.setId(rs.getInt("entidade_id"));
         entidade.setNome(rs.getString("nome"));
         entidade.setCodigo(rs.getString("codigo"));
-        entidade.setGrupo(rs.getString("senha").charAt(0));
+        entidade.setGrupo(rs.getString("grupo").charAt(0));
     }
 }

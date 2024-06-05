@@ -63,9 +63,9 @@ public class UsuarioRepository {
         try (
                 Connection connection = dbConfig.getConnection();
                 PreparedStatement st = connection.prepareStatement("INSERT INTO usuario (" +
-                        "nome, senha)" +
+                        "nome_usuario, nome, senha)" +
                         " VALUES " +
-                        "(?, ?)")
+                        "(?, ?, ?)")
         ) {
             prepareStatementForUsuario(usuario, st);
 
@@ -109,8 +109,9 @@ public class UsuarioRepository {
     }
 
     private void prepareStatementForUsuario(Usuario usuario, PreparedStatement st) throws SQLException {
-        st.setString(1, usuario.getNome());
-        st.setString(2, usuario.getSenha());
+        st.setString(1, usuario.getNomeUsuario());
+        st.setString(2, usuario.getNome());
+        st.setString(3, usuario.getSenha());
     }
 
 
