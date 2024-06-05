@@ -69,6 +69,7 @@ public class UsuarioRepository {
         ) {
             prepareStatementForUsuario(usuario, st);
 
+            return st.executeUpdate();
 
         } catch (SQLException e) {
             e.printStackTrace();
@@ -114,8 +115,8 @@ public class UsuarioRepository {
 
 
     private void mapResultSetToUsuario(ResultSet rs, Usuario usuario) throws SQLException {
-        usuario.setNomeUsuario("nome_usuario");
-        usuario.setNome("nome");
-        usuario.setSenha("senha");
+        usuario.setNomeUsuario(rs.getString("nome_usuario"));
+        usuario.setNome(rs.getString("nome"));
+        usuario.setSenha(rs.getString("senha"));
     }
 }
