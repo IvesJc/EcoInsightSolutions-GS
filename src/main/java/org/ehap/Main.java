@@ -27,7 +27,7 @@ public class Main {
     public static HttpServer startServer() {
         // create a resource config that scans for JAX-RS resources and providers
         // in org.venda package
-        final ResourceConfig rc = new ResourceConfig().packages("org.salesforce");
+        final ResourceConfig rc = new ResourceConfig().packages("org.ehap");
         rc.register(new CORSFilter());
         rc.register(CORSFilter.class);
         // create and start a new instance of grizzly http server
