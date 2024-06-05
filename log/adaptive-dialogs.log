@@ -1,0 +1,23 @@
+2024-06-05 19:55:12 [grizzly-http-server-0] INFO  org.ehap.Main - [GET] - 200 - OK
+2024-06-05 19:58:16 [grizzly-http-server-1] INFO  org.ehap.Main - [GET] - 200 - OK
+2024-06-05 19:58:59 [grizzly-http-server-2] INFO  org.ehap.Main - [GET] - 200 - OK
+2024-06-05 20:01:45 [grizzly-http-server-0] INFO  org.ehap.Main - [POST] - 201 - OK
+2024-06-05 20:01:52 [grizzly-http-server-3] INFO  org.ehap.Main - [GET] - 200 - OK
+2024-06-05 20:03:09 [grizzly-http-server-4] INFO  org.ehap.Main - [PUT] - 200 - OK
+2024-06-05 20:03:14 [grizzly-http-server-7] INFO  org.ehap.Main - [GET] - 200 - OK
+2024-06-05 20:03:38 [grizzly-http-server-8] INFO  org.ehap.Main - [DELETE] - 204 - No content
+2024-06-05 20:03:41 [grizzly-http-server-5] INFO  org.ehap.Main - [GET] - 200 - OK
+2024-06-05 20:12:26 [grizzly-http-server-0] INFO  org.ehap.Main - 404 - Entidade NOT FOUND
+2024-06-05 20:12:48 [grizzly-http-server-1] INFO  org.ehap.Main - 404 - Entidade NOT FOUND
+2024-06-05 20:12:55 [grizzly-http-server-2] INFO  org.ehap.Main - 404 - Entidade NOT FOUND
+2024-06-05 20:14:01 [grizzly-http-server-0] INFO  org.ehap.Main - 404 - Entidade NOT FOUND
+2024-06-05 20:14:44 [grizzly-http-server-1] INFO  org.ehap.Main - [GET] - 200 - OK
+2024-06-05 20:15:16 [grizzly-http-server-0] INFO  org.ehap.Main - [GET] - 200 - OK
+2024-06-05 20:15:25 [grizzly-http-server-2] INFO  org.ehap.Main - [GET] - 200 - OK
+2024-06-05 20:15:45 [grizzly-http-server-4] INFO  org.ehap.Main - [GET] - 200 - OK
+2024-06-05 20:16:16 [grizzly-http-server-6] INFO  org.ehap.Main - [POST] - 201 - OK
+2024-06-05 20:16:21 [grizzly-http-server-7] INFO  org.ehap.Main - [GET] - 200 - OK
+2024-06-05 20:16:56 [grizzly-http-server-8] INFO  org.ehap.Main - [PUT] - 200 - OK
+2024-06-05 20:17:01 [grizzly-http-server-9] INFO  org.ehap.Main - [GET] - 200 - OK
+2024-06-05 20:17:28 [grizzly-http-server-10] INFO  org.ehap.Main - [DELETE] - 204 - No content
+2024-06-05 20:17:32 [grizzly-http-server-11] INFO  org.ehap.Main - [GET] - 200 - OK
