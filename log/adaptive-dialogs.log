@@ -21,3 +21,40 @@
 2024-06-05 20:17:01 [grizzly-http-server-9] INFO  org.ehap.Main - [GET] - 200 - OK
 2024-06-05 20:17:28 [grizzly-http-server-10] INFO  org.ehap.Main - [DELETE] - 204 - No content
 2024-06-05 20:17:32 [grizzly-http-server-11] INFO  org.ehap.Main - [GET] - 200 - OK
+2024-06-05 20:31:59 [grizzly-http-server-0] INFO  org.ehap.Main - [GET] - 200 - OK
+2024-06-05 20:48:48 [grizzly-http-server-0] INFO  org.ehap.Main - [GET] - 200 - OK
+2024-06-05 20:49:58 [grizzly-http-server-0] INFO  org.ehap.Main - [GET] - 200 - OK
+2024-06-05 20:52:05 [grizzly-http-server-0] INFO  org.ehap.Main - [POST] - 201 - OK
+2024-06-05 20:52:09 [grizzly-http-server-1] INFO  org.ehap.Main - [GET] - 200 - OK
+2024-06-05 20:53:12 [grizzly-http-server-2] INFO  org.ehap.Main - [PUT] - 200 - OK
+2024-06-05 20:53:15 [grizzly-http-server-3] INFO  org.ehap.Main - [GET] - 200 - OK
+2024-06-05 20:54:03 [grizzly-http-server-0] INFO  org.ehap.Main - [PUT] - 200 - OK
+2024-06-05 20:54:17 [grizzly-http-server-1] INFO  org.ehap.Main - [GET] - 200 - OK
+2024-06-05 20:54:24 [grizzly-http-server-2] INFO  org.ehap.Main - [PUT] - 200 - OK
+2024-06-05 20:57:44 [grizzly-http-server-6] INFO  org.ehap.Main - [PUT] - 200 - OK
+2024-06-05 20:57:47 [grizzly-http-server-7] INFO  org.ehap.Main - [GET] - 200 - OK
+2024-06-05 20:58:05 [grizzly-http-server-5] INFO  org.ehap.Main - [DELETE] - 204 - No content
+2024-06-05 20:58:09 [grizzly-http-server-3] INFO  org.ehap.Main - [GET] - 200 - OK
+2024-06-05 21:12:10 [grizzly-http-server-1] INFO  org.ehap.Main - [GET] - 200 - OK
+2024-06-05 21:12:48 [grizzly-http-server-0] INFO  org.ehap.Main - [GET] - 200 - OK
+2024-06-05 21:14:46 [grizzly-http-server-1] INFO  org.ehap.Main - [GET] - 200 - OK
+2024-06-05 21:15:07 [grizzly-http-server-2] INFO  org.ehap.Main - [GET] - 200 - OK
+2024-06-05 21:15:39 [grizzly-http-server-3] INFO  org.ehap.Main - [GET] - 200 - OK
+2024-06-05 21:43:54 [grizzly-http-server-0] INFO  org.ehap.Main - [GET] - 200 - OK
+2024-06-05 21:43:58 [grizzly-http-server-1] INFO  org.ehap.Main - [GET] - 200 - OK
+2024-06-05 21:44:25 [grizzly-http-server-5] INFO  org.ehap.Main - [GET] - 200 - OK
+2024-06-05 21:44:27 [grizzly-http-server-6] INFO  org.ehap.Main - [GET] - 200 - OK
+2024-06-05 21:44:29 [grizzly-http-server-7] INFO  org.ehap.Main - [GET] - 200 - OK
+2024-06-05 21:46:17 [grizzly-http-server-10] INFO  org.ehap.Main - [POST] - 201 - OK
+2024-06-05 21:46:22 [grizzly-http-server-11] INFO  org.ehap.Main - [GET] - 200 - OK
+2024-06-05 21:50:44 [grizzly-http-server-1] INFO  org.ehap.Main - [POST] - 201 - OK
+2024-06-05 21:50:50 [grizzly-http-server-2] INFO  org.ehap.Main - [GET] - 200 - OK
+2024-06-05 21:50:54 [grizzly-http-server-0] INFO  org.ehap.Main - [GET] - 200 - OK
+2024-06-05 21:55:51 [grizzly-http-server-0] INFO  org.ehap.Main - [PUT] - 200 - OK
+2024-06-05 21:55:56 [grizzly-http-server-1] INFO  org.ehap.Main - [GET] - 200 - OK
+2024-06-05 21:56:24 [grizzly-http-server-2] INFO  org.ehap.Main - [DELETE] - 204 - No content
+2024-06-05 21:56:28 [grizzly-http-server-3] INFO  org.ehap.Main - 404 - Producao Plastico NOT FOUND
+2024-06-05 21:56:31 [grizzly-http-server-4] INFO  org.ehap.Main - [GET] - 200 - OK
+2024-06-05 21:56:50 [grizzly-http-server-5] INFO  org.ehap.Main - [GET] - 200 - OK
+2024-06-05 21:57:02 [grizzly-http-server-6] INFO  org.ehap.Main - [DELETE] - 204 - No content
+2024-06-05 21:57:04 [grizzly-http-server-7] INFO  org.ehap.Main - [GET] - 200 - OK

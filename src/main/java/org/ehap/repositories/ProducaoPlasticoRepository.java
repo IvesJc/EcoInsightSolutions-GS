@@ -38,14 +38,16 @@ public class ProducaoPlasticoRepository {
         return lista;
     }
 
-    public ProducaoPlastico getProducaoPlasticoByPk(Integer ano) {
+    public ProducaoPlastico getProducaoPlasticoByPk(Integer ano, Integer entidadeId) {
         ProducaoPlastico ProducaoPlastico = null;
         try (
                 Connection connection = dbConfig.getConnection();
                 PreparedStatement st =
-                        connection.prepareStatement("SELECT * FROM producao_plastico WHERE ano = ?")
+                        connection.prepareStatement("SELECT * FROM producao_plastico WHERE ano = ? and " +
+                                "ENTIDADE_ID = ?")
         ) {
             st.setInt(1, ano);
+            st.setInt(2, entidadeId);
             ResultSet rs = st.executeQuery();
 
             if (rs.next()) {
@@ -63,9 +65,9 @@ public class ProducaoPlasticoRepository {
         try (
                 Connection connection = dbConfig.getConnection();
                 PreparedStatement st = connection.prepareStatement("INSERT INTO producao_plastico (" +
-                        "ano, producaoAnualPlastico, participacaoEmissaoOceanos, " +
-                        "participacaoReciclagemRegional, participacaoQueimaRegional, " +
-                        "participacaoLixoMalGerido, participacaoAterrosRegional, lixoMalGeridoPerCapita, entidadeId)" +
+                        "ano, PRODUCAO_ANUAL_PLASTICO, PARTICI_EMISSAO_OCEANOS, " +
+                        "PARTICI_RECICLAGEM_REGIONAL, PARTICI_QUEIMA_REGIONAL, " +
+                        "PARTICI_LIXO_MAL_GERIDO, PARTICI_ATERROS_REGIONAL, LIXO_MAL_GERIDO_PER_CAPITA, ENTIDADE_ID)" +
                         " VALUES " +
                         "(?, ?, ?, ?, ?, ?, ?, ?, ?)")
         ) {
@@ -85,11 +87,11 @@ public class ProducaoPlasticoRepository {
                 Connection connection = dbConfig.getConnection();
                 PreparedStatement st = connection.prepareStatement(
                         "UPDATE producao_plastico " +
-                                "SET producaoAnualPlastico = ?, participacaoEmissaoOceanos = ?, " +
-                                "participacaoReciclagemRegional = ?, participacaoQueimaRegional = ?, " +
-                                "participacaoLixoMalGerido = ?, participacaoAterrosRegional = ?, " +
-                                "lixoMalGeridoPerCapita = ?, entidadeId = ?" +
-                                "WHERE ano = ?")
+                                "SET PRODUCAO_ANUAL_PLASTICO = ?, PARTICI_EMISSAO_OCEANOS = ?, " +
+                                "PARTICI_RECICLAGEM_REGIONAL = ?, PARTICI_QUEIMA_REGIONAL = ?, " +
+                                "PARTICI_LIXO_MAL_GERIDO = ?, PARTICI_ATERROS_REGIONAL = ?, " +
+                                "LIXO_MAL_GERIDO_PER_CAPITA = ?" +
+                                "WHERE ano = ? and ENTIDADE_ID = ?")
         ) {
             st.setDouble(1, producaoPlastico.getProducaoAnualPlastico());
             st.setDouble(2, producaoPlastico.getParticipacaoEmissaoOceanos());
@@ -98,8 +100,8 @@ public class ProducaoPlasticoRepository {
             st.setDouble(5, producaoPlastico.getParticipacaoLixoMalGerido());
             st.setDouble(6, producaoPlastico.getParticipacaoAterrosRegional());
             st.setDouble(7, producaoPlastico.getLixoMalGeridoPerCapita());
-            st.setInt(8, producaoPlastico.getEntidadeId());
-            st.setInt(9, producaoPlastico.getAno());
+            st.setInt(8, producaoPlastico.getAno());
+            st.setInt(9, producaoPlastico.getEntidadeId());
 
 
             st.executeUpdate();
@@ -109,13 +111,14 @@ public class ProducaoPlasticoRepository {
         }
     }
 
-    public void deleteByPk(Integer ano) {
+    public void deleteByPk(Integer ano, Integer entidadeId) {
         try (
                 Connection connection = dbConfig.getConnection();
                 PreparedStatement st = connection.prepareStatement(
-                        "DELETE FROM producao_plastico WHERE ano = ?")
+                        "DELETE FROM producao_plastico WHERE ano = ? and ENTIDADE_ID = ?")
         ) {
             st.setInt(1, ano);
+            st.setInt(2, entidadeId);
             st.executeUpdate();
         } catch (SQLException e) {
             e.printStackTrace();
@@ -125,16 +128,18 @@ public class ProducaoPlasticoRepository {
     private void prepareStatementForProducaoPlastico(ProducaoPlastico producaoPlastico, PreparedStatement st) throws SQLException {
         st.setInt(1, producaoPlastico.getAno());
         st.setDouble(2, producaoPlastico.getProducaoAnualPlastico());
-        st.setDouble(3, producaoPlastico.getParticipacaoReciclagemRegional());
-        st.setDouble(4, producaoPlastico.getParticipacaoQueimaRegional());
-        st.setDouble(5, producaoPlastico.getParticipacaoLixoMalGerido());
-        st.setDouble(6, producaoPlastico.getParticipacaoAterrosRegional());
-        st.setDouble(7, producaoPlastico.getParticipacaoLixoMalGerido());
-        st.setInt(8, producaoPlastico.getEntidadeId());
+        st.setDouble(3, producaoPlastico.getParticipacaoEmissaoOceanos());
+        st.setDouble(4, producaoPlastico.getParticipacaoReciclagemRegional());
+        st.setDouble(5, producaoPlastico.getParticipacaoQueimaRegional());
+        st.setDouble(6, producaoPlastico.getParticipacaoLixoMalGerido());
+        st.setDouble(7, producaoPlastico.getParticipacaoAterrosRegional());
+        st.setDouble(8, producaoPlastico.getParticipacaoLixoMalGerido());
+        st.setInt(9, producaoPlastico.getEntidadeId());
     }
 
 
     private void mapResultSetToProducaoPlastico(ResultSet rs, ProducaoPlastico producaoPlastico) throws SQLException {
+        producaoPlastico.setAno(rs.getInt("ano"));
         producaoPlastico.setProducaoAnualPlastico(rs.getDouble("producao_anual_plastico"));
         producaoPlastico.setParticipacaoEmissaoOceanos(rs.getDouble("partici_emissao_oceanos"));
         producaoPlastico.setParticipacaoReciclagemRegional(rs.getDouble("partici_reciclagem_regional"));
