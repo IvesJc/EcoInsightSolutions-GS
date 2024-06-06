@@ -58,3 +58,5 @@
 2024-06-05 21:56:50 [grizzly-http-server-5] INFO  org.ehap.Main - [GET] - 200 - OK
 2024-06-05 21:57:02 [grizzly-http-server-6] INFO  org.ehap.Main - [DELETE] - 204 - No content
 2024-06-05 21:57:04 [grizzly-http-server-7] INFO  org.ehap.Main - [GET] - 200 - OK
+2024-06-05 23:11:09 [grizzly-http-server-0] INFO  org.ehap.Main - [GET] - 200 - OK
+2024-06-05 23:54:23 [grizzly-http-server-0] INFO  org.ehap.Main - [GET] - 200 - OK
