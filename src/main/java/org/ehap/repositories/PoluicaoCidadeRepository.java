@@ -65,7 +65,7 @@ public class PoluicaoCidadeRepository {
         try (
                 Connection connection = dbConfig.getConnection();
                 PreparedStatement st = connection.prepareStatement("INSERT INTO poluicao_cidade (" +
-                        "cidade, regiao, ano, qualidadeAr, poluicaoAgua, entidadeId)" +
+                        "cidade, regiao, ano, qualidade_ar, poluicao_agua, entidade_id)" +
                         " VALUES " +
                         "(?, ?, ?, ?, ?, ?)")
         ) {
@@ -85,7 +85,7 @@ public class PoluicaoCidadeRepository {
                 Connection connection = dbConfig.getConnection();
                 PreparedStatement st = connection.prepareStatement(
                         "UPDATE poluicao_cidade " +
-                                "SET qualidadeAr = ?, poluicaoAgua = ?, entidadeId = ?" +
+                                "SET qualidade_ar = ?, poluicao_agua = ?, entidade_id = ?" +
                                 "WHERE cidade = ? and regiao = ? and ano = ?")
         ) {
             st.setDouble(1, poluicaoCidade.getQualidadeAr());
