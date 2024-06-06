@@ -11,6 +11,7 @@ import org.json.JSONObject;
 import java.io.IOException;
 import java.net.URI;
 
+import static org.ehap.service.GeolocationService.geocode;
 import static org.ehap.service.ViaCepService.getCEP;
 
 /**
@@ -45,10 +46,13 @@ public class Main {
      */
     public static void main(String [] args) throws IOException {
         try {
+            String query = "Berlin";
+            JSONObject jsonGeoloc = geocode(query);
+            System.out.println(jsonGeoloc.toString(2));
 
             String cep = "01508020";
-            JSONObject json = getCEP(cep);
-            System.out.println(json.toString(2));
+            JSONObject jsonViaCep = getCEP(cep);
+            System.out.println(jsonViaCep.toString(2));
         } catch (IOException e) {
             e.printStackTrace();
         }
