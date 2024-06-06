@@ -71,7 +71,7 @@ public class UsuarioResource {
 
     @DELETE
     @Path("{username}")
-    public Response deleteCliente(@PathParam("username") String username){
+    public Response deleteUsuario(@PathParam("username") String username){
         Usuario user = usuarioRepository.getUsuarioByUsername(username);
         if (user != null){
             usuarioRepository.deleteByUsername(username);

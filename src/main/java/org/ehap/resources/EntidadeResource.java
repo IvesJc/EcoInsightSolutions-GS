@@ -71,7 +71,7 @@ public class EntidadeResource {
 
     @DELETE
     @Path("{id}")
-    public Response deleteCliente(@PathParam("id") int id){
+    public Response deleteEntidade(@PathParam("id") int id){
         Entidade entity = entidadeRepository.getEntidadeById(id);
         if (entity != null){
             entidadeRepository.deleteById(id);
