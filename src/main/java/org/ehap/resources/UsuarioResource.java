@@ -63,7 +63,7 @@ public class UsuarioResource {
         if (credenciaisValidas) {
             return Response.ok("Login realizado com sucesso.").build();
         } else {
-            return Response.status(400).entity("Usuário ou senha inválidos.").build();
+            return Response.status(401).entity("Usuário ou senha inválidos.").build();
         }
     }
 
