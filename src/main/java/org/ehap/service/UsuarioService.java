@@ -9,16 +9,12 @@ public class UsuarioService {
     UsuarioRepository usuarioRepository = new UsuarioRepository();
 
     public boolean validarLoginSenha(String login, String senha) {
-        Usuario user = usuarioRepository.getUsuarioByUsername(login);
         try {
-
-            if (user.getNomeUsuario().equals(login) && user.getSenha().equals(senha)) {
-                return true;
-            } else {
-                return false;
-            }
+            Usuario user = usuarioRepository.getUsuarioByUsername(login);
+            return user != null && user.getNomeUsuario().equals(login) && user.getSenha().equals(senha);
         } catch (Exception e) {
-            throw new WrongPasswordException("Senha inválida!");
+            e.printStackTrace();
         }
+        return false;
     }
 }
