@@ -6,6 +6,7 @@ import jakarta.ws.rs.core.Response;
 import org.ehap.Main;
 import org.ehap.models.Usuario;
 import org.ehap.repositories.UsuarioRepository;
+import org.ehap.service.UsuarioService;
 
 
 import java.util.List;
@@ -14,6 +15,8 @@ import java.util.List;
 public class UsuarioResource {
 
     UsuarioRepository usuarioRepository = new UsuarioRepository();
+
+    UsuarioService usuarioService = new UsuarioService();
 
     @GET
     public Response getUsuarios() {
@@ -50,6 +53,18 @@ public class UsuarioResource {
         }
         Main.LOGGER.info("[POST] - 201 - OK");
         return Response.status(201).entity(usuario).build();
+    }
+
+    @GET
+    @Produces(MediaType.APPLICATION_JSON)
+    @Consumes(MediaType.APPLICATION_JSON)
+    public Response validarUsuario(String login, String password){
+        boolean credenciaisValidas = usuarioService.validarLoginSenha(login, password);
+        if (credenciaisValidas) {
+            return Response.ok("Login realizado com sucesso.").build();
+        } else {
+            return Response.status(400).entity("Usuário ou senha inválidos.").build();
+        }
     }
 
     @PUT
