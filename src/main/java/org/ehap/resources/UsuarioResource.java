@@ -4,6 +4,7 @@ import jakarta.ws.rs.*;
 import jakarta.ws.rs.core.MediaType;
 import jakarta.ws.rs.core.Response;
 import org.ehap.Main;
+import org.ehap.dto.UsuarioDTO;
 import org.ehap.models.Usuario;
 import org.ehap.repositories.UsuarioRepository;
 import org.ehap.service.UsuarioService;
@@ -42,7 +43,9 @@ public class UsuarioResource {
     }
 
     @POST
+    @Path("register")
     public Response createUsuario(Usuario usuario){
+
         if (usuario == null){
             Main.LOGGER.info("404 - Usuario can not be null ");
             return Response.status(400).entity("Usuario não pode ser nula").build();
@@ -55,13 +58,14 @@ public class UsuarioResource {
         return Response.status(201).entity(usuario).build();
     }
 
-    @GET
+    @POST
+    @Path("login")
     @Produces(MediaType.APPLICATION_JSON)
     @Consumes(MediaType.APPLICATION_JSON)
-    public Response validarUsuario(String login, String password){
-        boolean credenciaisValidas = usuarioService.validarLoginSenha(login, password);
+    public Response validarUsuario(UsuarioDTO usuario){
+        boolean credenciaisValidas = usuarioService.validarLoginSenha(usuario.usuario(), usuario.senha());
         if (credenciaisValidas) {
-            return Response.ok("Login realizado com sucesso.").build();
+            return Response.status(200).entity("Login realizado com sucesso.").build();
         } else {
             return Response.status(401).entity("Usuário ou senha inválidos.").build();
         }
